@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>云鞠御驾 | 唐风马术文旅电商平台</title>
+    <title>云鞠御驾 | Yunju Yujia - 唐风马术文旅电商平台 Tang Equestrian Cultural Tourism Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Ma+Shan+Zheng&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #0a1628;
@@ -15,11 +15,7 @@
             --cream: #fef3c7;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Noto Serif SC', serif;
@@ -28,9 +24,8 @@
             overflow-x: hidden;
         }
         
-        .font-calligraphy {
-            font-family: 'Ma Shan Zheng', cursive;
-        }
+        .font-calligraphy { font-family: 'Ma Shan Zheng', cursive; }
+        .font-english { font-family: 'Cinzel', serif; }
         
         /* 蓝眼泪粒子背景 */
         #particles-canvas {
@@ -43,7 +38,6 @@
             pointer-events: none;
         }
         
-        /* 玻璃拟态效果 */
         .glass {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -57,36 +51,17 @@
             border-radius: 20px;
         }
         
-        /* 发光效果 */
         .glow-text {
             text-shadow: 0 0 20px var(--glow-blue), 0 0 40px var(--glow-purple);
         }
         
-        .glow-border {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.1);
-        }
-        
-        /* 白龙马按钮动画 */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
         
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
+        .float-animation { animation: float 3s ease-in-out infinite; }
         
-        /* 呼吸灯效果 */
-        @keyframes breathe {
-            0%, 100% { opacity: 0.6; box-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
-            50% { opacity: 1; box-shadow: 0 0 40px rgba(0, 212, 255, 0.8); }
-        }
-        
-        .breathe {
-            animation: breathe 2s ease-in-out infinite;
-        }
-        
-        /* 商品卡片悬停 */
         .product-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -96,48 +71,28 @@
             box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
         }
         
-        /* 导航栏 */
         .nav-blur {
             background: rgba(10, 22, 40, 0.8);
             backdrop-filter: blur(20px);
         }
         
-        /* 标签切换 */
         .tab-active {
             background: linear-gradient(135deg, var(--glow-blue), var(--glow-purple));
             color: white;
         }
         
-        /* 滚动条 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--primary-blue); }
+        ::-webkit-scrollbar-thumb { background: var(--glow-blue); border-radius: 4px; }
         
-        ::-webkit-scrollbar-track {
-            background: var(--primary-blue);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--glow-blue);
-            border-radius: 4px;
-        }
-        
-        /* 对话框动画 */
         @keyframes slideIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .message-in {
-            animation: slideIn 0.3s ease-out;
-        }
+        .message-in { animation: slideIn 0.3s ease-out; }
+        .hidden-section { display: none; }
         
-        /* 隐藏类 */
-        .hidden-section {
-            display: none;
-        }
-        
-        /* 渐变文字 */
         .gradient-text {
             background: linear-gradient(135deg, var(--glow-blue), var(--glow-purple), var(--gold));
             -webkit-background-clip: text;
@@ -145,7 +100,6 @@
             background-clip: text;
         }
         
-        /* 按钮光效 */
         .btn-glow {
             position: relative;
             overflow: hidden;
@@ -162,11 +116,9 @@
             transition: left 0.5s;
         }
         
-        .btn-glow:hover::before {
-            left: 100%;
-        }
+        .btn-glow:hover::before { left: 100%; }
         
-        /* AI白龙马悬浮窗 */
+        /* AI白龙马 */
         .ai-assistant {
             position: fixed;
             bottom: 30px;
@@ -208,9 +160,7 @@
             overflow: hidden;
         }
         
-        .ai-panel.active {
-            display: flex;
-        }
+        .ai-panel.active { display: flex; }
         
         .ai-header {
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(168, 85, 247, 0.2));
@@ -277,9 +227,7 @@
             outline: none;
         }
         
-        .ai-input input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
+        .ai-input input::placeholder { color: rgba(255, 255, 255, 0.4); }
         
         .ai-input button {
             width: 40px;
@@ -294,7 +242,6 @@
             justify-content: center;
         }
         
-        /* 快捷按钮 */
         .quick-actions {
             display: flex;
             gap: 8px;
@@ -318,12 +265,59 @@
             border-color: rgba(0, 212, 255, 0.5);
             color: white;
         }
+
+        /* 语言切换 */
+        .lang-switch {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 90;
+            background: rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            border-radius: 20px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .lang-switch:hover {
+            background: rgba(0, 212, 255, 0.4);
+        }
+
+        /* 双语显示 */
+        .bilingual .zh { display: block; }
+        .bilingual .en { display: block; font-size: 0.85em; opacity: 0.7; font-family: 'Cinzel', serif; }
+        
+        .english-only .zh { display: none; }
+        .english-only .en { display: block; font-family: 'Cinzel', serif; }
+        
+        .chinese-only .zh { display: block; }
+        .chinese-only .en { display: none; }
+
+        /* 特价标签 */
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
     </style>
 </head>
-<body>
-    <!-- 蓝眼泪粒子背景 -->
+<body class="bilingual">
     <canvas id="particles-canvas"></canvas>
     
+    <!-- 语言切换 -->
+    <button class="lang-switch" onclick="toggleLanguage()">
+        <span class="zh">中/EN</span>
+        <span class="en" style="display:none">EN/中</span>
+    </button>
+
     <!-- 导航栏 -->
     <nav class="nav-blur fixed top-0 w-full z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -331,15 +325,33 @@
                 <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center">
                     <span class="text-xl">🐴</span>
                 </div>
-                <span class="font-calligraphy text-2xl text-cyan-300">云鞠御驾</span>
+                <div>
+                    <span class="font-calligraphy text-2xl text-cyan-300">云鞠御驾</span>
+                    <span class="font-english text-sm text-cyan-200/60 block">Yunju Yujia</span>
+                </div>
             </div>
             
             <div class="hidden md:flex items-center gap-8">
-                <a href="#home" class="hover:text-cyan-300 transition-colors">首页</a>
-                <a href="#culture" class="hover:text-cyan-300 transition-colors">文化IP</a>
-                <a href="#experience" class="hover:text-cyan-300 transition-colors">体验预订</a>
-                <a href="#shop" class="hover:text-cyan-300 transition-colors">文创商城</a>
-                <a href="#events" class="hover:text-cyan-300 transition-colors">活动集会</a>
+                <a href="#home" class="hover:text-cyan-300 transition-colors">
+                    <span class="zh">首页</span>
+                    <span class="en">Home</span>
+                </a>
+                <a href="#culture" class="hover:text-cyan-300 transition-colors">
+                    <span class="zh">文化IP</span>
+                    <span class="en">Culture</span>
+                </a>
+                <a href="#experience" class="hover:text-cyan-300 transition-colors">
+                    <span class="zh">体验预订</span>
+                    <span class="en">Experience</span>
+                </a>
+                <a href="#shop" class="hover:text-cyan-300 transition-colors">
+                    <span class="zh">文创商城</span>
+                    <span class="en">Shop</span>
+                </a>
+                <a href="#events" class="hover:text-cyan-300 transition-colors">
+                    <span class="zh">活动集会</span>
+                    <span class="en">Events</span>
+                </a>
             </div>
             
             <div class="flex items-center gap-4">
@@ -350,98 +362,150 @@
         </div>
     </nav>
 
-    <!-- 首页 Hero Section -->
+    <!-- 首页 Hero -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
             <div class="mb-8">
                 <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 flex items-center justify-center float-animation">
                     <span class="text-5xl">🐴</span>
                 </div>
-                <h1 class="font-calligraphy text-6xl md:text-8xl mb-4 gradient-text glow-text">云鞠御驾</h1>
-                <p class="text-xl md:text-2xl text-cyan-200/80 mb-2">唐风马术 · 蓝眼泪奇境 · AI旅拍</p>
-                <p class="text-lg text-white/60">穿越千年，御马观潮，让非遗文化在数字时代重生</p>
+                <h1 class="font-calligraphy text-6xl md:text-8xl mb-4 gradient-text glow-text">
+                    <span class="zh">云鞠御驾</span>
+                    <span class="en">Yunju Yujia</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-cyan-200/80 mb-2">
+                    <span class="zh">唐风马术 · 蓝眼泪奇境 · AI旅拍</span>
+                    <span class="en">Tang Equestrian · Blue Tears Wonder · AI Photography</span>
+                </p>
+                <p class="text-lg text-white/60">
+                    <span class="zh">穿越千年，御马观潮，让非遗文化在数字时代重生</span>
+                    <span class="en">Travel through millennia, ride with the tide, revive intangible heritage in the digital age</span>
+                </p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
                 <button onclick="openAIGC()" class="glass-card p-6 hover:scale-105 transition-transform group">
                     <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">📸</div>
-                    <div class="font-semibold">AI唐风旅拍</div>
-                    <div class="text-sm text-white/60">一键生成骑士写真</div>
+                    <div class="font-semibold">
+                        <span class="zh">AI唐风旅拍</span>
+                        <span class="en">AI Photo</span>
+                    </div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">一键生成骑士写真</span>
+                        <span class="en">One-click knight portrait</span>
+                    </div>
                 </button>
                 <button onclick="scrollToSection('experience')" class="glass-card p-6 hover:scale-105 transition-transform group">
                     <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🏇</div>
-                    <div class="font-semibold">马术体验</div>
-                    <div class="text-sm text-white/60">蓝眼泪野骑预订</div>
+                    <div class="font-semibold">
+                        <span class="zh">马术体验</span>
+                        <span class="en">Equestrian</span>
+                    </div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">蓝眼泪野骑预订</span>
+                        <span class="en">Blue Tears Riding</span>
+                    </div>
                 </button>
                 <button onclick="scrollToSection('shop')" class="glass-card p-6 hover:scale-105 transition-transform group">
                     <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🏺</div>
-                    <div class="font-semibold">文创商城</div>
-                    <div class="text-sm text-white/60">唐潮三事周边</div>
+                    <div class="font-semibold">
+                        <span class="zh">文创商城</span>
+                        <span class="en">Cultural Shop</span>
+                    </div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">唐潮三事周边</span>
+                        <span class="en">Tang Treasures</span>
+                    </div>
                 </button>
                 <button onclick="openCloudHorse()" class="glass-card p-6 hover:scale-105 transition-transform group">
                     <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">☁️</div>
-                    <div class="font-semibold">云端养马</div>
-                    <div class="text-sm text-white/60">数字宠物养成</div>
+                    <div class="font-semibold">
+                        <span class="zh">云端养马</span>
+                        <span class="en">Cloud Horse</span>
+                    </div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">数字宠物养成</span>
+                        <span class="en">Digital Pet</span>
+                    </div>
                 </button>
             </div>
             
             <div class="flex justify-center gap-12 text-center">
                 <div>
                     <div class="text-3xl font-bold text-cyan-300">1300+</div>
-                    <div class="text-sm text-white/60">年唐马球历史</div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">年唐马球历史</span>
+                        <span class="en">Years History</span>
+                    </div>
                 </div>
                 <div>
                     <div class="text-3xl font-bold text-purple-300">10万+</div>
-                    <div class="text-sm text-white/60">AI写真生成</div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">AI写真生成</span>
+                        <span class="en">AI Portraits</span>
+                    </div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-pink-300">50+</div>
-                    <div class="text-sm text-white/60">非遗联名款</div>
+                    <div class="text-3xl font-bold text-pink-300">3</div>
+                    <div class="text-sm text-white/60">
+                        <span class="zh">唐潮文创系列</span>
+                        <span class="en">Cultural Series</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 文化IP展示 -->
+        <!-- 文化IP -->
     <section id="culture" class="relative py-20 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">双IP文化</h2>
-            <p class="text-center text-white/60 mb-16">唐马球非遗 · 蓝眼泪奇观</p>
+            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">
+                <span class="zh">双IP文化</span>
+                <span class="en">Dual IP Culture</span>
+            </h2>
+            <p class="text-center text-white/60 mb-16">
+                <span class="zh">唐马球非遗 · 蓝眼泪奇观</span>
+                <span class="en">Tang Polo Heritage · Blue Tears Wonder</span>
+            </p>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass-card p-8 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-amber-500/20 to-red-500/20 rounded-full blur-3xl"></div>
                     <div class="relative z-10">
                         <div class="text-6xl mb-4">🏇</div>
-                        <h3 class="text-2xl font-bold mb-4 text-amber-300">唐马球非遗</h3>
-                        <p class="text-white/70 mb-6">马球盛行于唐代，被誉为"贵族运动"。唐玄宗李隆基就是马球高手，唐代宫廷每逢节日必设马球比赛。</p>
+                        <h3 class="text-2xl font-bold mb-4 text-amber-300">
+                            <span class="zh">唐马球非遗</span>
+                            <span class="en">Tang Polo Heritage</span>
+                        </h3>
+                        <p class="text-white/70 mb-6">
+                            <span class="zh">马球盛行于唐代，被誉为"贵族运动"。唐玄宗李隆基就是马球高手，唐代宫廷每逢节日必设马球比赛。</span>
+                            <span class="en">Polo flourished in the Tang Dynasty, known as the "noble sport". Emperor Xuanzong was a polo master.</span>
+                        </p>
                         
                         <div class="space-y-4">
                             <div class="flex gap-4">
                                 <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
                                 <div>
-                                    <div class="text-amber-400 font-semibold">唐代（618-907）</div>
-                                    <div class="text-sm text-white/60">马球运动鼎盛时期，成为宫廷必备活动</div>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <div class="text-amber-400 font-semibold">宋代以后</div>
-                                    <div class="text-sm text-white/60">逐渐式微，但技艺传承不绝</div>
+                                    <div class="text-amber-400 font-semibold">Tang Dynasty (618-907)</div>
+                                    <div class="text-sm text-white/60">
+                                        <span class="zh">马球运动鼎盛时期，成为宫廷必备活动</span>
+                                        <span class="en">Golden age of polo, essential court activity</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="flex gap-4">
                                 <div class="w-2 h-2 rounded-full bg-cyan-400 mt-2 flex-shrink-0"></div>
                                 <div>
-                                    <div class="text-cyan-400 font-semibold">2024</div>
-                                    <div class="text-sm text-white/60">云鞠御驾复兴唐马球文化，融合现代科技</div>
+                                    <div class="text-cyan-400 font-semibold">2024 Revival</div>
+                                    <div class="text-sm text-white/60">
+                                        <span class="zh">云鞠御驾复兴唐马球文化，融合现代科技</span>
+                                        <span class="en">Yunju Yujia revives Tang polo with modern technology</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
                         <button onclick="openTangPoloAR()" class="mt-6 btn-glow bg-gradient-to-r from-amber-500 to-red-500 px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition-all">
-                            🥽 AR观看唐马球赛
+                            🥽 <span class="zh">AR观看唐马球赛</span><span class="en">AR Polo Experience</span>
                         </button>
                     </div>
                 </div>
@@ -450,64 +514,139 @@
                     <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
                     <div class="relative z-10">
                         <div class="text-6xl mb-4">🌊</div>
-                        <h3 class="text-2xl font-bold mb-4 text-cyan-300">蓝眼泪海域奇观</h3>
-                        <p class="text-white/70 mb-6">福建长乐海域独特的夜光藻现象，海浪拍打时发出幽蓝荧光，如梦似幻，被称为"海洋极光"。</p>
+                        <h3 class="text-2xl font-bold mb-4 text-cyan-300">
+                            <span class="zh">蓝眼泪海域奇观</span>
+                            <span class="en">Blue Tears Wonder</span>
+                        </h3>
+                        <p class="text-white/70 mb-6">
+                            <span class="zh">福建长乐海域独特的夜光藻现象，海浪拍打时发出幽蓝荧光，如梦似幻，被称为"海洋极光"。</span>
+                            <span class="en">Unique bioluminescent algae in Changle waters, creating ethereal blue glow - the "Aurora of the Sea".</span>
+                        </p>
                         
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <div class="glass p-4 rounded-xl text-center">
                                 <div class="text-2xl font-bold text-cyan-300">4-8月</div>
-                                <div class="text-sm text-white/60">最佳观赏期</div>
+                                <div class="text-sm text-white/60">Apr-Aug Best Season</div>
                             </div>
                             <div class="glass p-4 rounded-xl text-center">
                                 <div class="text-2xl font-bold text-cyan-300">20-25℃</div>
-                                <div class="text-sm text-white/60">适宜水温</div>
+                                <div class="text-sm text-white/60">Optimal Temperature</div>
                             </div>
                             <div class="glass p-4 rounded-xl text-center">
                                 <div class="text-2xl font-bold text-cyan-300">暗夜</div>
-                                <div class="text-sm text-white/60">最佳时段</div>
+                                <div class="text-sm text-white/60">Dark Night Best</div>
                             </div>
                             <div class="glass p-4 rounded-xl text-center">
-                                <div class="text-2xl font-bold text-cyan-300">农历</div>
-                                <div class="text-sm text-white/60">初一前后</div>
+                                <div class="text-2xl font-bold text-cyan-300">农历初一</div>
+                                <div class="text-sm text-white/60">New Moon Period</div>
                             </div>
                         </div>
                         
                         <button onclick="openBlueTearsAR()" class="btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
-                            🥽 AR预览蓝眼泪奇观
+                            🥽 <span class="zh">AR预览蓝眼泪</span><span class="en">AR Blue Tears Preview</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 体验预订 -->
+        <!-- 体验预订 -->
     <section id="experience" class="relative py-20 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">体验预订</h2>
-            <p class="text-center text-white/60 mb-12">左手咖啡，右手策马，网红体验等你解锁</p>
+            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">
+                <span class="zh">体验预订</span>
+                <span class="en">Experience Booking</span>
+            </h2>
+            <p class="text-center text-white/60 mb-12">
+                <span class="zh">左手咖啡，右手策马，网红体验等你解锁</span>
+                <span class="en">Coffee in left, reins in right, unlock the viral experience</span>
+            </p>
             
-            <div class="flex justify-center gap-4 mb-12">
-                <button onclick="switchExperienceTab('riding')" id="tab-riding" class="tab-active px-6 py-3 rounded-full transition-all">🏇 马术骑行</button>
-                <button onclick="switchExperienceTab('study')" id="tab-study" class="px-6 py-3 rounded-full glass hover:bg-white/10 transition-all">📚 研学课程</button>
-                <button onclick="switchExperienceTab('cafe')" id="tab-cafe" class="px-6 py-3 rounded-full glass hover:bg-white/10 transition-all">☕ 船型咖啡吧</button>
+            <div class="flex justify-center gap-4 mb-12 flex-wrap">
+                <button onclick="switchExperienceTab('ai-photo')" id="tab-ai-photo" class="tab-active px-6 py-3 rounded-full transition-all">📸 AI旅拍 / AI Photo</button>
+                <button onclick="switchExperienceTab('riding')" id="tab-riding" class="px-6 py-3 rounded-full glass hover:bg-white/10 transition-all">🏇 马术骑行 / Riding</button>
+                <button onclick="switchExperienceTab('cafe')" id="tab-cafe" class="px-6 py-3 rounded-full glass hover:bg-white/10 transition-all">☕ 船型咖啡 / Boat Cafe</button>
             </div>
             
-            <div id="content-riding" class="grid md:grid-cols-3 gap-6">
+            <!-- AI旅拍 -->
+            <div id="content-ai-photo" class="grid md:grid-cols-2 gap-6">
+                <!-- 9.9元体验价 -->
+                <div class="glass-card overflow-hidden product-card relative border-2 border-red-500/50">
+                    <div class="price-tag">🔥 <span class="zh">体验价</span><span class="en">Trial</span> ¥9.9</div>
+                    <div class="h-48 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 flex items-center justify-center text-6xl relative">
+                        🎭
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">唐毬蓝泪AI换脸</span>
+                                <span class="en">Tang Polo Blue Tears AI Face Swap</span>
+                            </h3>
+                            <div class="text-right">
+                                <span class="text-gray-400 line-through text-sm">¥99</span>
+                                <span class="text-red-400 font-bold text-xl">¥9.9</span>
+                            </div>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">上传照片，AI生成唐风骑士骑马穿越蓝眼泪海域的唯美写真。限时体验价！</span>
+                            <span class="en">Upload photo, AI generates Tang knight riding through blue tears sea. Limited trial price!</span>
+                        </p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">🔥 <span class="zh">限时特惠</span><span class="en">Limited</span></span>
+                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">AI</span>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">📸 <span class="zh">照片</span><span class="en">Photo</span></span>
+                        </div>
+                        <button onclick="addToCart('唐毬蓝泪AI换脸体验', 9.9)" class="w-full btn-glow bg-gradient-to-r from-red-500 to-pink-500 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-red-500/30 transition-all">
+                            <span class="zh">立即体验 ¥9.9</span><span class="en">Try Now ¥9.9</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 完整版 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="h-48 bg-gradient-to-br from-cyan-900 to-blue-900 flex items-center justify-center text-6xl">👑</div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">皇家御马AI写真套装</span>
+                                <span class="en">Royal Equestrian AI Portrait Set</span>
+                            </h3>
+                            <span class="text-cyan-400 font-bold text-xl">¥199</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">10张精修唐风骑士写真 + 蓝眼泪背景 + 实体相册包邮</span>
+                            <span class="en">10 refined Tang knight portraits + Blue tears background + Physical album free shipping</span>
+                        </p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">10 <span class="zh">张</span><span class="en">Photos</span></span>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">📦 <span class="zh">实体相册</span><span class="en">Album</span></span>
+                        </div>
+                        <button onclick="addToCart('皇家御马AI写真套装', 199)" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">立即预订</span><span class="en">Book Now</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 马术骑行 -->
+            <div id="content-riding" class="hidden-section grid md:grid-cols-3 gap-6">
                 <div class="glass-card overflow-hidden product-card">
                     <div class="h-48 bg-gradient-to-br from-cyan-900 to-blue-900 flex items-center justify-center text-6xl">🌙</div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">海上明月共潮生</h3>
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">海上明月共潮生</span>
+                                <span class="en">Moon & Tide Riding</span>
+                            </h3>
                             <span class="text-cyan-400 font-bold">¥688</span>
                         </div>
-                        <p class="text-white/60 text-sm mb-4">戌时出海，子夜观泪，海边骑马穿越蓝眼泪荧光海</p>
-                        <div class="flex gap-2 mb-4">
-                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">2小时</span>
-                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">含装备</span>
-                            <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-1 rounded">摄影跟拍</span>
-                        </div>
-                        <button onclick="addToCart('海上明月共潮生', 688)" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all">立即预订</button>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">戌时出海，子夜观泪，海边骑马穿越蓝眼泪荧光海</span>
+                            <span class="en">Evening departure, midnight blue tears, horseback riding through bioluminescent waves</span>
+                        </p>
+                        <button onclick="addToCart('海上明月共潮生', 688)" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">立即预订</span><span class="en">Book Now</span>
+                        </button>
                     </div>
                 </div>
                 
@@ -515,207 +654,509 @@
                     <div class="h-48 bg-gradient-to-br from-amber-900 to-orange-900 flex items-center justify-center text-6xl">🏇</div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">唐风马球体验课</h3>
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">唐风马球体验课</span>
+                                <span class="en">Tang Polo Experience</span>
+                            </h3>
                             <span class="text-amber-400 font-bold">¥398</span>
                         </div>
-                        <p class="text-white/60 text-sm mb-4">学习传统马球技艺，体验唐代贵族运动</p>
-                        <div class="flex gap-2 mb-4">
-                            <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-1 rounded">3小时</span>
-                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">专业教练</span>
-                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">唐装体验</span>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">学习传统马球技艺，体验唐代贵族运动</span>
+                            <span class="en">Learn traditional polo skills, experience Tang noble sport</span>
+                        </p>
+                        <button onclick="addToCart('唐风马球体验课', 398)" class="w-full btn-glow bg-gradient-to-r from-amber-500 to-orange-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">立即预订</span><span class="en">Book Now</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 咖啡吧 -->
+            <div id="content-cafe" class="hidden-section">
+                <div class="glass-card p-8 text-center max-w-3xl mx-auto">
+                    <div class="text-8xl mb-6">☕</div>
+                    <h3 class="text-3xl font-bold mb-4 text-cyan-300">
+                        <span class="zh">船型咖啡吧</span>
+                        <span class="en">Boat-shaped Café</span>
+                    </h3>
+                    <p class="text-white/70 mb-8">
+                        <span class="zh">面朝大海，左手咖啡，右手策马。独特的船型建筑，360°海景视野。</span>
+                        <span class="en">Facing the sea, coffee in hand, reins in the other. Unique boat-shaped architecture with 360° ocean view.</span>
+                    </p>
+                    <button onclick="addToCart('船型咖啡吧预约', 88)" class="btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-full font-bold text-lg">
+                        <span class="zh">预约座位 ¥88/位</span><span class="en">Reserve ¥88/person</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- 文创商城 - 唐潮三事 -->
+    <section id="shop" class="relative py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">
+                <span class="zh">文创商城</span>
+                <span class="en">Cultural Shop</span>
+            </h2>
+            <p class="text-center text-white/60 mb-4">
+                <span class="zh">唐潮三事 · 福外文创</span>
+                <span class="en">Three Treasures of Tang Dynasty · FUWA Cultural Creation</span>
+            </p>
+            
+            <!-- 三事介绍 -->
+            <div class="glass-card p-6 mb-12 max-w-3xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 text-center text-amber-300">
+                    <span class="zh">「唐潮三事」系列文创</span>
+                    <span class="en">"Three Tang Treasures" Cultural Series</span>
+                </h3>
+                <p class="text-white/70 text-center text-sm">
+                    <span class="zh">融合唐马球非遗文化与蓝眼泪海域奇观，打造独具特色的文创精品</span>
+                    <span class="en">Blending Tang Polo heritage with Blue Tears wonder, creating unique cultural products</span>
+                </p>
+            </div>
+            
+            <!-- 三个产品 -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 产品1：唐毬驰骋天地间 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="aspect-square bg-gradient-to-br from-amber-800 via-orange-900 to-red-900 flex items-center justify-center text-6xl relative">
+                        🏇
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-xl">
+                            <div class="text-xs text-amber-300 mb-1">Tang Polo Series</div>
+                            <div class="font-calligraphy text-lg">唐毬驰骋天地间</div>
                         </div>
-                        <button onclick="addToCart('唐风马球体验课', 398)" class="w-full btn-glow bg-gradient-to-r from-amber-500 to-orange-500 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition-all">立即预订</button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2 text-lg">
+                            <span class="zh">唐毬驰骋天地间</span>
+                            <span class="en">Tang Polo: Galloping Across Heaven and Earth</span>
+                        </h3>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">马球主题文创系列，展现唐代马球运动的英姿飒爽</span>
+                            <span class="en">Polo-themed series showcasing Tang Dynasty equestrian elegance</span>
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🏺 <span class="zh">唐马球瓷盘</span><span class="en">Porcelain Plate</span></span>
+                                <span class="text-amber-400">¥388</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🧣 <span class="zh">骑士丝巾</span><span class="en">Rider Scarf</span></span>
+                                <span class="text-amber-400">¥168</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">📿 <span class="zh">马球挂饰</span><span class="en">Polo Pendant</span></span>
+                                <span class="text-amber-400">¥88</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('唐毬驰骋天地间系列', 388)" class="w-full btn-glow bg-gradient-to-r from-amber-500 to-orange-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">选购系列</span><span class="en">Shop Series</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 产品2：天问运动荼蘼香 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="aspect-square bg-gradient-to-br from-emerald-800 via-teal-900 to-cyan-900 flex items-center justify-center text-6xl relative">
+                        🌿
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-xl">
+                            <div class="text-xs text-emerald-300 mb-1">Sports & Wellness Series</div>
+                            <div class="font-calligraphy text-lg">天问运动荼蘼香</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2 text-lg">
+                            <span class="zh">天问运动荼蘼香</span>
+                            <span class="en">Tianwen Sports: Tuberose Fragrance</span>
+                        </h3>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">运动健康主题文创，融合传统香道与现代运动元素</span>
+                            <span class="en">Sports wellness series blending traditional incense with modern fitness</span>
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🧘 <span class="zh">运动香囊</span><span class="en">Sports Sachet</span></span>
+                                <span class="text-emerald-400">¥128</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">💧 <span class="zh">能量精油</span><span class="en">Energy Essential Oil</span></span>
+                                <span class="text-emerald-400">¥168</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🎽 <span class="zh">速干唐装</span><span class="en">Quick-dry Tang Wear</span></span>
+                                <span class="text-emerald-400">¥298</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('天问运动荼蘼香系列', 298)" class="w-full btn-glow bg-gradient-to-r from-emerald-500 to-teal-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">选购系列</span><span class="en">Shop Series</span>
+                        </button>
+                    </div>
+                </div>
+                
+               <!-- 产品3：蓝域音疗祈愿瓶 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="aspect-square bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 flex items-center justify-center text-6xl relative">
+                        🫙
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-xl">
+                            <div class="text-xs text-blue-300 mb-1">Blue Tears Healing Series</div>
+                            <div class="font-calligraphy text-lg">蓝域音疗祈愿瓶</div>
+                        </div>
+                    </div>
+                                        <div class="p-6">
+                        <h3 class="font-semibold mb-2 text-lg">
+                            <span class="zh">蓝域音疗祈愿瓶</span>
+                            <span class="en">Blue Realm: Sound Healing Wish Bottle</span>
+                        </h3>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">蓝眼泪主题疗愈文创，结合音疗与海洋元素的心灵礼物</span>
+                            <span class="en">Blue tears healing series combining sound therapy with ocean elements</span>
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                                               <span class="text-white/60">🫙 <span class="zh">音疗祈愿瓶</span><span class="en">Sound Healing Bottle</span></span>
+                                <span class="text-blue-400">¥268</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🎵 <span class="zh">海浪白噪音机</span><span class="en">Wave Sound Machine</span></span>
+                                <span class="text-blue-400">¥368</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                                                <span class="text-white/60">💎 <span class="zh">蓝眼泪夜灯</span><span class="en">Blue Tears Night Light</span></span>
+                                <span class="text-blue-400">¥198</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('蓝域音疗祈愿瓶系列', 368)" class="w-full btn-glow bg-gradient-to-r from-blue-500 to-purple-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">选购系列</span><span class="en">Shop Series</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- 体验预订 -->
+    <section id="experience" class="relative py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">
+                <span class="zh">体验预订</span>
+                <span class="en">Experience Booking</span>
+            </h2>
+            <p class="text-center text-white/60 mb-12">
+                <span class="zh">左手咖啡，右手策马，网红体验等你解锁</span>
+                <span class="en">Coffee in left, reins in right, unlock the viral experience</span>
+            </p>
+            
+            <div class="flex justify-center gap-4 mb-12 flex-wrap">
+                <button onclick="switchExperienceTab('ai-photo')" id="tab-ai-photo" class="tab-active px-6 py-3 rounded-full transition-all">📸 AI旅拍 / AI Photo</button>
+                <button onclick="switchExperienceTab('riding')" id="tab-riding" class="px-6 py-3 rounded-full glass hover:bg-white/10 transition-all">🏇 马术骑行 / Riding</button>
+                <button onclick="switchExperienceTab('cafe')" id="tab-cafe" class="px-6 py-3 rounded-full glass hover:bg-white/10 transition-all">☕ 船型咖啡 / Boat Cafe</button>
+            </div>
+            
+            <!-- AI旅拍 -->
+            <div id="content-ai-photo" class="grid md:grid-cols-2 gap-6">
+                <!-- 9.9元体验价 -->
+                <div class="glass-card overflow-hidden product-card relative border-2 border-red-500/50">
+                    <div class="price-tag">🔥 <span class="zh">体验价</span><span class="en">Trial</span> ¥9.9</div>
+                    <div class="h-48 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 flex items-center justify-center text-6xl relative">
+                        🎭
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">唐毬蓝泪AI换脸</span>
+                                <span class="en">Tang Polo Blue Tears AI Face Swap</span>
+                            </h3>
+                            <div class="text-right">
+                                <span class="text-gray-400 line-through text-sm">¥99</span>
+                                <span class="text-red-400 font-bold text-xl">¥9.9</span>
+                            </div>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">上传照片，AI生成唐风骑士骑马穿越蓝眼泪海域的唯美写真。限时体验价！</span>
+                            <span class="en">Upload photo, AI generates Tang knight riding through blue tears sea. Limited trial price!</span>
+                        </p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">🔥 <span class="zh">限时特惠</span><span class="en">Limited</span></span>
+                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">AI</span>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">📸 <span class="zh">照片</span><span class="en">Photo</span></span>
+                        </div>
+                        <button onclick="addToCart('唐毬蓝泪AI换脸体验', 9.9)" class="w-full btn-glow bg-gradient-to-r from-red-500 to-pink-500 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-red-500/30 transition-all">
+                            <span class="zh">立即体验 ¥9.9</span><span class="en">Try Now ¥9.9</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 完整版 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="h-48 bg-gradient-to-br from-cyan-900 to-blue-900 flex items-center justify-center text-6xl">👑</div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">皇家御马AI写真套装</span>
+                                <span class="en">Royal Equestrian AI Portrait Set</span>
+                            </h3>
+                            <span class="text-cyan-400 font-bold text-xl">¥199</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">10张精修唐风骑士写真 + 蓝眼泪背景 + 实体相册包邮</span>
+                            <span class="en">10 refined Tang knight portraits + Blue tears background + Physical album free shipping</span>
+                        </p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">10 <span class="zh">张</span><span class="en">Photos</span></span>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">📦 <span class="zh">实体相册</span><span class="en">Album</span></span>
+                        </div>
+                        <button onclick="addToCart('皇家御马AI写真套装', 199)" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">立即预订</span><span class="en">Book Now</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 马术骑行 -->
+            <div id="content-riding" class="hidden-section grid md:grid-cols-3 gap-6">
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="h-48 bg-gradient-to-br from-cyan-900 to-blue-900 flex items-center justify-center text-6xl">🌙</div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">海上明月共潮生</span>
+                                <span class="en">Moon & Tide Riding</span>
+                            </h3>
+                            <span class="text-cyan-400 font-bold">¥688</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">戌时出海，子夜观泪，海边骑马穿越蓝眼泪荧光海</span>
+                            <span class="en">Evening departure, midnight blue tears, horseback riding through bioluminescent waves</span>
+                        </p>
+                        <button onclick="addToCart('海上明月共潮生', 688)" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">立即预订</span><span class="en">Book Now</span>
+                        </button>
                     </div>
                 </div>
                 
                 <div class="glass-card overflow-hidden product-card">
-                    <div class="h-48 bg-gradient-to-br from-purple-900 to-pink-900 flex items-center justify-center text-6xl">👑</div>
+                    <div class="h-48 bg-gradient-to-br from-amber-900 to-orange-900 flex items-center justify-center text-6xl">🏇</div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">皇家御马私人定制</h3>
-                            <span class="text-purple-400 font-bold">¥1888</span>
+                            <h3 class="text-xl font-bold">
+                                <span class="zh">唐风马球体验课</span>
+                                <span class="en">Tang Polo Experience</span>
+                            </h3>
+                            <span class="text-amber-400 font-bold">¥398</span>
                         </div>
-                        <p class="text-white/60 text-sm mb-4">一对一专属服务，马术教学+海边野骑+宫廷午宴</p>
-                        <div class="flex gap-2 mb-4">
-                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">全天</span>
-                            <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-1 rounded">VIP服务</span>
-                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">接送</span>
-                        </div>
-                        <button onclick="addToCart('皇家御马私人定制', 1888)" class="w-full btn-glow bg-gradient-to-r from-purple-500 to-pink-500 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all">立即预订</button>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">学习传统马球技艺，体验唐代贵族运动</span>
+                            <span class="en">Learn traditional polo skills, experience Tang noble sport</span>
+                        </p>
+                        <button onclick="addToCart('唐风马球体验课', 398)" class="w-full btn-glow bg-gradient-to-r from-amber-500 to-orange-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">立即预订</span><span class="en">Book Now</span>
+                        </button>
                     </div>
                 </div>
             </div>
             
-            <div id="content-study" class="hidden-section grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 product-card">
-                    <div class="flex gap-6">
-                        <div class="w-32 h-32 rounded-xl bg-gradient-to-br from-amber-800 to-red-900 flex items-center justify-center text-5xl flex-shrink-0">📜</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2 text-amber-300">唐马球历史文化研学</h3>
-                            <p class="text-white/60 text-sm mb-3">深入了解马球运动的起源、发展与文化内涵，参观马球文物展览</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-amber-400 font-bold text-xl">¥198/人</span>
-                                <button onclick="addToCart('唐马球历史文化研学', 198)" class="btn-glow bg-amber-500 px-4 py-2 rounded-full text-sm font-semibold">预订</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="glass-card p-6 product-card">
-                    <div class="flex gap-6">
-                        <div class="w-32 h-32 rounded-xl bg-gradient-to-br from-cyan-800 to-blue-900 flex items-center justify-center text-5xl flex-shrink-0">🔬</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2 text-cyan-300">蓝眼泪海洋生态课</h3>
-                            <p class="text-white/60 text-sm mb-3">学习夜光藻生态知识，亲手采集样本，了解海洋环境保护</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-cyan-400 font-bold text-xl">¥168/人</span>
-                                <button onclick="addToCart('蓝眼泪海洋生态课', 168)" class="btn-glow bg-cyan-500 px-4 py-2 rounded-full text-sm font-semibold">预订</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+            <!-- 咖啡吧 -->
             <div id="content-cafe" class="hidden-section">
                 <div class="glass-card p-8 text-center max-w-3xl mx-auto">
                     <div class="text-8xl mb-6">☕</div>
-                    <h3 class="text-3xl font-bold mb-4 text-cyan-300">船型咖啡吧</h3>
-                    <p class="text-white/70 mb-8">面朝大海，左手咖啡，右手策马。独特的船型建筑，360°海景视野，品味"海韵骑迹"特调咖啡。</p>
-                    
-                    <div class="grid grid-cols-3 gap-4 mb-8">
-                        <div class="glass p-4 rounded-xl">
-                            <div class="text-3xl mb-2">🌅</div>
-                            <div class="font-semibold">日出观海</div>
-                            <div class="text-sm text-white/60">06:00-09:00</div>
-                        </div>
-                        <div class="glass p-4 rounded-xl">
-                            <div class="text-3xl mb-2">☕</div>
-                            <div class="font-semibold">下午茶时光</div>
-                            <div class="text-sm text-white/60">14:00-17:00</div>
-                        </div>
-                        <div class="glass p-4 rounded-xl">
-                            <div class="text-3xl mb-2">🌙</div>
-                            <div class="font-semibold">蓝眼泪夜宴</div>
-                            <div class="text-sm text-white/60">20:00-24:00</div>
-                        </div>
-                    </div>
-                    
-                    <button onclick="addToCart('船型咖啡吧预约', 88)" class="btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all">预约座位 ¥88/位（含特调咖啡）</button>
+                    <h3 class="text-3xl font-bold mb-4 text-cyan-300">
+                        <span class="zh">船型咖啡吧</span>
+                        <span class="en">Boat-shaped Café</span>
+                    </h3>
+                    <p class="text-white/70 mb-8">
+                        <span class="zh">面朝大海，左手咖啡，右手策马。独特的船型建筑，360°海景视野。</span>
+                        <span class="en">Facing the sea, coffee in hand, reins in the other. Unique boat-shaped architecture with 360° ocean view.</span>
+                    </p>
+                    <button onclick="addToCart('船型咖啡吧预约', 88)" class="btn-glow bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-full font-bold text-lg">
+                        <span class="zh">预约座位 ¥88/位</span><span class="en">Reserve ¥88/person</span>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 文创商城 -->
+        <!-- 文创商城 - 唐潮三事 -->
     <section id="shop" class="relative py-20 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">文创商城</h2>
-            <p class="text-center text-white/60 mb-12">唐潮三事 · 数字藏品 · 非遗联名</p>
+            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">
+                <span class="zh">文创商城</span>
+                <span class="en">Cultural Shop</span>
+            </h2>
+            <p class="text-center text-white/60 mb-4">
+                <span class="zh">唐潮三事 · 福外文创</span>
+                <span class="en">Three Treasures of Tang Dynasty · FUWA Cultural Creation</span>
+            </p>
             
-            <div class="flex justify-center gap-4 mb-12 flex-wrap">
-                <button onclick="filterProducts('all')" class="shop-tab tab-active px-6 py-3 rounded-full transition-all" data-category="all">全部</button>
-                <button onclick="filterProducts('tangchao')" class="shop-tab px-6 py-3 rounded-full glass hover:bg-white/10 transition-all" data-category="tangchao">🏺 唐潮三事</button>
-                <button onclick="filterProducts('nft')" class="shop-tab px-6 py-3 rounded-full glass hover:bg-white/10 transition-all" data-category="nft">💎 数字藏品</button>
-                <button onclick="filterProducts('co-brand')" class="shop-tab px-6 py-3 rounded-full glass hover:bg-white/10 transition-all" data-category="co-brand">🤝 非遗联名</button>
+            <!-- 三事介绍 -->
+            <div class="glass-card p-6 mb-12 max-w-3xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 text-center text-amber-300">
+                    <span class="zh">「唐潮三事」系列文创</span>
+                    <span class="en">"Three Tang Treasures" Cultural Series</span>
+                </h3>
+                <p class="text-white/70 text-center text-sm">
+                    <span class="zh">融合唐马球非遗文化与蓝眼泪海域奇观，打造独具特色的文创精品</span>
+                    <span class="en">Blending Tang Polo heritage with Blue Tears wonder, creating unique cultural products</span>
+                </p>
             </div>
             
-            <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-card overflow-hidden product-card" data-category="tangchao">
-                    <div class="aspect-square bg-gradient-to-br from-amber-900 to-orange-900 flex items-center justify-center text-6xl relative">
-                        🏺
-                        <div class="absolute top-2 right-2 bg-amber-500 text-xs px-2 py-1 rounded-full">热卖</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold mb-1">唐马球瓷盘</h3>
-                        <p class="text-white/60 text-xs mb-3">德化白瓷 · 手工绘制</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-amber-400 font-bold">¥388</span>
-                            <button onclick="addToCart('唐马球瓷盘', 388)" class="bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 px-3 py-1.5 rounded-full text-sm transition-colors">加入购物车</button>
+            <!-- 三个产品 -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 产品1：唐毬驰骋天地间 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="aspect-square bg-gradient-to-br from-amber-800 via-orange-900 to-red-900 flex items-center justify-center text-6xl relative">
+                        🏇
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-xl">
+                            <div class="text-xs text-amber-300 mb-1">Tang Polo Series</div>
+                            <div class="font-calligraphy text-lg">唐毬驰骋天地间</div>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2 text-lg">
+                            <span class="zh">唐毬驰骋天地间</span>
+                            <span class="en">Tang Polo: Galloping Across Heaven and Earth</span>
+                        </h3>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">马球主题文创系列，展现唐代马球运动的英姿飒爽</span>
+                            <span class="en">Polo-themed series showcasing Tang Dynasty equestrian elegance</span>
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🏺 <span class="zh">唐马球瓷盘</span><span class="en">Porcelain Plate</span></span>
+                                <span class="text-amber-400">¥388</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🧣 <span class="zh">骑士丝巾</span><span class="en">Rider Scarf</span></span>
+                                <span class="text-amber-400">¥168</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">📿 <span class="zh">马球挂饰</span><span class="en">Polo Pendant</span></span>
+                                <span class="text-amber-400">¥88</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('唐毬驰骋天地间系列', 388)" class="w-full btn-glow bg-gradient-to-r from-amber-500 to-orange-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">选购系列</span><span class="en">Shop Series</span>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="glass-card overflow-hidden product-card" data-category="tangchao">
-                    <div class="aspect-square bg-gradient-to-br from-cyan-900 to-blue-900 flex items-center justify-center text-6xl">🧣</div>
-                    <div class="p-4">
-                        <h3 class="font-semibold mb-1">蓝眼泪丝巾</h3>
-                        <p class="text-white/60 text-xs mb-3">真丝材质 · 夜光印花</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-cyan-400 font-bold">¥268</span>
-                            <button onclick="addToCart('蓝眼泪丝巾', 268)" class="bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 px-3 py-1.5 rounded-full text-sm transition-colors">加入购物车</button>
+                <!-- 产品2：天问运动荼蘼香 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="aspect-square bg-gradient-to-br from-emerald-800 via-teal-900 to-cyan-900 flex items-center justify-center text-6xl relative">
+                        🌿
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-xl">
+                            <div class="text-xs text-emerald-300 mb-1">Sports & Wellness Series</div>
+                            <div class="font-calligraphy text-lg">天问运动荼蘼香</div>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2 text-lg">
+                            <span class="zh">天问运动荼蘼香</span>
+                            <span class="en">Tianwen Sports: Tuberose Fragrance</span>
+                        </h3>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">运动健康主题文创，融合传统香道与现代运动元素</span>
+                            <span class="en">Sports wellness series blending traditional incense with modern fitness</span>
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🧘 <span class="zh">运动香囊</span><span class="en">Sports Sachet</span></span>
+                                <span class="text-emerald-400">¥128</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">💧 <span class="zh">能量精油</span><span class="en">Energy Essential Oil</span></span>
+                                <span class="text-emerald-400">¥168</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🎽 <span class="zh">速干唐装</span><span class="en">Quick-dry Tang Wear</span></span>
+                                <span class="text-emerald-400">¥298</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('天问运动荼蘼香系列', 298)" class="w-full btn-glow bg-gradient-to-r from-emerald-500 to-teal-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">选购系列</span><span class="en">Shop Series</span>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="glass-card overflow-hidden product-card" data-category="nft">
-                    <div class="aspect-square bg-gradient-to-br from-purple-900 to-pink-900 flex items-center justify-center text-6xl relative">
-                        🐴
-                        <div class="absolute top-2 right-2 bg-purple-500 text-xs px-2 py-1 rounded-full">NFT</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold mb-1">白龙马数字藏品 #001</h3>
-                        <p class="text-white/60 text-xs mb-3">限量发行 · 区块链确权</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-purple-400 font-bold">¥128</span>
-                            <button onclick="addToCart('白龙马数字藏品 #001', 128)" class="bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 px-3 py-1.5 rounded-full text-sm transition-colors">立即购买</button>
+                <!-- 产品3：蓝域音疗祈愿瓶 -->
+                <div class="glass-card overflow-hidden product-card">
+                    <div class="aspect-square bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 flex items-center justify-center text-6xl relative">
+                        🫙
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-xl">
+                            <div class="text-xs text-blue-300 mb-1">Blue Tears Healing Series</div>
+                            <div class="font-calligraphy text-lg">蓝域音疗祈愿瓶</div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="glass-card overflow-hidden product-card" data-category="co-brand">
-                    <div class="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-6xl relative">
-                        🍵
-                        <div class="absolute top-2 right-2 bg-gray-500 text-xs px-2 py-1 rounded-full">联名</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold mb-1">春池玻璃 · 蓝眼泪杯</h3>
-                        <p class="text-white/60 text-xs mb-3">台湾春池玻璃 · 回收玻璃</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-300 font-bold">¥458</span>
-                            <button onclick="addToCart('春池玻璃蓝眼泪杯', 458)" class="bg-gray-500/20 hover:bg-gray-500/40 text-gray-300 px-3 py-1.5 rounded-full text-sm transition-colors">加入购物车</button>
+                    <div class="p-6">
+                        <h3 class="font-semibold mb-2 text-lg">
+                            <span class="zh">蓝域音疗祈愿瓶</span>
+                            <span class="en">Blue Realm: Sound Healing Wish Bottle</span>
+                        </h3>
+                        <p class="text-white/60 text-sm mb-4">
+                            <span class="zh">蓝眼泪主题疗愈文创，结合音疗与海洋元素的心灵礼物</span>
+                            <span class="en">Blue tears healing series combining sound therapy with ocean elements</span>
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🫙 <span class="zh">音疗祈愿瓶</span><span class="en">Sound Healing Bottle</span></span>
+                                <span class="text-blue-400">¥268</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">🎵 <span class="zh">海浪白噪音机</span><span class="en">Wave Sound Machine</span></span>
+                                <span class="text-blue-400">¥368</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-white/60">💎 <span class="zh">蓝眼泪夜灯</span><span class="en">Blue Tears Night Light</span></span>
+                                <span class="text-blue-400">¥198</span>
+                            </div>
                         </div>
+                        <button onclick="addToCart('蓝域音疗祈愿瓶系列', 368)" class="w-full btn-glow bg-gradient-to-r from-blue-500 to-purple-500 py-3 rounded-xl font-semibold">
+                            <span class="zh">选购系列</span><span class="en">Shop Series</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 活动集会 -->
+        <!-- 活动集会 -->
     <section id="events" class="relative py-20 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">活动集会</h2>
-            <p class="text-center text-white/60 mb-12">线上互动 · 线下集会 · 精彩不断</p>
+            <h2 class="font-calligraphy text-5xl text-center mb-4 gradient-text">
+                <span class="zh">活动集会</span>
+                <span class="en">Events & Gatherings</span>
+            </h2>
+            <p class="text-center text-white/60 mb-12">
+                <span class="zh">线上互动 · 线下集会 · 精彩不断</span>
+                <span class="en">Online Interaction · Offline Gatherings · Endless Excitement</span>
+            </p>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass-card p-8">
                     <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                         <span class="text-3xl">💻</span>
-                        线上活动
+                        <span class="zh">线上活动</span>
+                        <span class="en">Online Events</span>
                     </h3>
-                    
                     <div class="space-y-4">
                         <div class="glass p-4 rounded-xl flex justify-between items-center">
                             <div>
-                                <div class="font-semibold">🎨 AI绘画大赛</div>
-                                <div class="text-sm text-white/60">创作你的唐风骑士形象</div>
+                                <div class="font-semibold">🎨 <span class="zh">AI绘画大赛</span><span class="en">AI Art Contest</span></div>
+                                <div class="text-sm text-white/60">
+                                    <span class="zh">创作你的唐风骑士形象</span>
+                                    <span class="en">Create your Tang knight avatar</span>
+                                </div>
                             </div>
-                            <span class="text-cyan-400 text-sm">进行中</span>
+                            <span class="text-cyan-400 text-sm">
+                                <span class="zh">进行中</span><span class="en">Ongoing</span>
+                            </span>
                         </div>
-                        
                         <div class="glass p-4 rounded-xl flex justify-between items-center">
                             <div>
-                                <div class="font-semibold">📸 蓝眼泪摄影大赛</div>
-                                <div class="text-sm text-white/60">分享你的蓝眼泪奇观照片</div>
+                                <div class="font-semibold">📸 <span class="zh">蓝眼泪摄影大赛</span><span class="en">Blue Tears Photo Contest</span></div>
+                                <div class="text-sm text-white/60">
+                                    <span class="zh">分享你的蓝眼泪奇观照片</span>
+                                    <span class="en">Share your blue tears photos</span>
+                                </div>
                             </div>
-                            <span class="text-purple-400 text-sm">报名中</span>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-xl flex justify-between items-center">
-                            <div>
-                                <div class="font-semibold">☁️ 云端马匹繁育季</div>
-                                <div class="text-sm text-white/60">培育稀有血统虚拟马匹</div>
-                            </div>
-                            <span class="text-amber-400 text-sm">即将开始</span>
+                            <span class="text-purple-400 text-sm">
+                                <span class="zh">报名中</span><span class="en">Registering</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -723,32 +1164,31 @@
                 <div class="glass-card p-8">
                     <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                         <span class="text-3xl">👥</span>
-                        线下集会
+                        <span class="zh">线下集会</span>
+                        <span class="en">Offline Gatherings</span>
                     </h3>
-                    
                     <div class="space-y-4">
                         <div class="glass p-4 rounded-xl">
                             <div class="flex justify-between items-start mb-2">
-                                <div class="font-semibold">🏇 2024唐风马术文化节</div>
-                                <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">5月20日</span>
+                                <div class="font-semibold">🏇 <span class="zh">2024唐风马术文化节</span><span class="en">2024 Tang Equestrian Festival</span></div>
+                                <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">May 20</span>
                             </div>
-                            <div class="text-sm text-white/60">长乐海边 · 马球表演 · 蓝眼泪观赏</div>
+                            <div class="text-sm text-white/60">
+                                <span class="zh">长乐海边 · 马球表演 · 蓝眼泪观赏</span>
+                                <span class="en">Changle Beach · Polo Show · Blue Tears Viewing</span>
+                            </div>
                         </div>
-                        
                         <div class="glass p-4 rounded-xl">
                             <div class="flex justify-between items-start mb-2">
-                                <div class="font-semibold">🌊 蓝眼泪追光者派对</div>
-                                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">每月初一</span>
+                                <div class="font-semibold">🌊 <span class="zh">蓝眼泪追光者派对</span><span class="en">Blue Tears Chaser Party</span></div>
+                                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                                    <span class="zh">每月初一</span><span class="en">Monthly</span>
+                                </span>
                             </div>
-                            <div class="text-sm text-white/60">海边骑马 · 荧光派对 · 篝火晚会</div>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-xl">
-                            <div class="flex justify-between items-start mb-2">
-                                <div class="font-semibold">🎭 非遗传承人见面会</div>
-                                <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-1 rounded">每季度</span>
+                            <div class="text-sm text-white/60">
+                                <span class="zh">海边骑马 · 荧光派对 · 篝火晚会</span>
+                                <span class="en">Beach Riding · Glow Party · Bonfire</span>
                             </div>
-                            <div class="text-sm text-white/60">与德化瓷、春池玻璃大师面对面</div>
                         </div>
                     </div>
                 </div>
@@ -764,91 +1204,115 @@
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center">
                         <span class="text-xl">🐴</span>
                     </div>
-                    <span class="font-calligraphy text-2xl text-cyan-300">云鞠御驾</span>
+                    <div>
+                        <span class="font-calligraphy text-2xl text-cyan-300">云鞠御驾</span>
+                        <span class="font-english text-sm text-cyan-200/60 block">Yunju Yujia</span>
+                    </div>
                 </div>
-                
                 <div class="text-center md:text-right text-white/40 text-sm">
-                    <p>唐风马术 · 蓝眼泪奇境 · AI旅拍</p>
-                    <p>© 2024 云鞠御驾 版权所有</p>
+                    <p>
+                        <span class="zh">唐风马术 · 蓝眼泪奇境 · AI旅拍</span>
+                        <span class="en">Tang Equestrian · Blue Tears · AI Photography</span>
+                    </p>
+                    <p>© 2024 Yunju Yujia. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- AI白龙马智能体 -->
+        <!-- AI白龙马 -->
     <div class="ai-assistant">
         <div class="ai-ball float-animation" onclick="toggleAI()">
             <span class="text-3xl">🐴</span>
         </div>
-        
         <div class="ai-panel" id="ai-panel">
             <div class="ai-header">
                 <div class="ai-avatar">🐴</div>
                 <div>
-                    <div class="font-semibold">白龙马</div>
-                    <div class="text-xs text-white/60">AI智能助手 · 随时为您效劳</div>
+                    <div class="font-semibold">
+                        <span class="zh">白龙马</span>
+                        <span class="en">White Dragon Horse</span>
+                    </div>
+                    <div class="text-xs text-white/60">AI Assistant · At Your Service</div>
                 </div>
             </div>
-            
             <div class="quick-actions">
-                <button class="quick-btn" onclick="sendQuickMessage('我想预订蓝眼泪野骑')">🏇 蓝眼泪野骑</button>
-                <button class="quick-btn" onclick="sendQuickMessage('推荐文创商品')">🏺 文创推荐</button>
-                <button class="quick-btn" onclick="sendQuickMessage('生成AI写真')">📸 AI旅拍</button>
-                <button class="quick-btn" onclick="sendQuickMessage('了解唐马球历史')">📜 文化故事</button>
+                <button class="quick-btn" onclick="sendQuickMessage('蓝眼泪野骑')">🏇 <span class="zh">蓝眼泪野骑</span><span class="en">Blue Tears Ride</span></button>
+                <button class="quick-btn" onclick="sendQuickMessage('唐潮三事')">🏺 <span class="zh">唐潮三事</span><span class="en">Three Treasures</span></button>
+                <button class="quick-btn" onclick="sendQuickMessage('AI旅拍9.9')">📸 <span class="zh">9.9体验</span><span class="en">¥9.9 Trial</span></button>
+                <button class="quick-btn" onclick="sendQuickMessage('唐马球历史')">📜 <span class="zh">文化故事</span><span class="en">Culture Story</span></button>
             </div>
-            
             <div class="ai-messages" id="ai-messages">
                 <div class="message ai message-in">
-                    🐴 小主安好～白龙马为您效劳！臣乃唐太宗坐骑转世，今化身为AI数字精灵，愿为殿下指点长乐马背风光、蓝眼泪奇观，还有咱家的文创好物！有何吩咐？
+                    🐴 <span class="zh">小主安好～白龙马为您效劳！臣乃唐太宗坐骑转世，今化身为AI数字精灵，愿为殿下指点长乐马背风光、蓝眼泪奇观，还有咱家的「唐潮三事」文创好物！有何吩咐？</span>
+                    <span class="en">Greetings! I am the White Dragon Horse, reincarnated as an AI spirit. How may I assist you today?</span>
                 </div>
             </div>
-            
             <div class="ai-input">
-                <input type="text" id="ai-input-field" placeholder="输入消息..." onkeypress="handleAIInput(event)">
+                <input type="text" id="ai-input-field" placeholder="输入消息... / Type message..." onkeypress="handleAIInput(event)">
                 <button onclick="sendAIMessage()">📤</button>
             </div>
         </div>
     </div>
 
-    <!-- 购物车弹窗 -->
+    <!-- 购物车 -->
     <div id="cart-modal" class="fixed inset-0 z-[200] hidden">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full max-w-md bg-[#0a1628] border-l border-white/10 p-6 overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold">购物车 🛒</h2>
+                <h2 class="text-2xl font-bold">
+                    <span class="zh">购物车 🛒</span>
+                    <span class="en">Shopping Cart 🛒</span>
+                </h2>
                 <button onclick="toggleCart()" class="text-2xl">✕</button>
             </div>
-            
-            <div id="cart-items" class="space-y-4 mb-6">
-                <!-- 购物车项目将动态添加 -->
-            </div>
-            
+            <div id="cart-items" class="space-y-4 mb-6"></div>
             <div id="cart-empty" class="text-center py-12 text-white/40">
                 <div class="text-6xl mb-4">🛒</div>
-                <p>购物车是空的</p>
+                <p>
+                    <span class="zh">购物车是空的</span>
+                    <span class="en">Your cart is empty</span>
+                </p>
             </div>
-            
             <div id="cart-footer" class="hidden border-t border-white/10 pt-4">
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-white/60">合计</span>
+                    <span class="text-white/60">
+                        <span class="zh">合计</span><span class="en">Total</span>
+                    </span>
                     <span class="text-2xl font-bold text-cyan-400" id="cart-total">¥0</span>
                 </div>
-                <button onclick="checkout()" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-purple-500 py-4 rounded-xl font-bold text-lg">去结算</button>
+                <button onclick="checkout()" class="w-full btn-glow bg-gradient-to-r from-cyan-500 to-purple-500 py-4 rounded-xl font-bold text-lg">
+                    <span class="zh">去结算</span><span class="en">Checkout</span>
+                </button>
             </div>
         </div>
     </div>
 
     <script>
-        // ==================== 全局变量 ====================
+                // 全局变量
         let cart = [];
         let aiOpen = false;
+        let currentLang = 'bilingual';
 
-        // ==================== 蓝眼泪粒子背景 ====================
+        // 语言切换
+        function toggleLanguage() {
+            const body = document.body;
+            if (currentLang === 'bilingual') {
+                body.className = 'chinese-only';
+                currentLang = 'chinese';
+            } else if (currentLang === 'chinese') {
+                body.className = 'english-only';
+                currentLang = 'english';
+            } else {
+                body.className = 'bilingual';
+                currentLang = 'bilingual';
+            }
+        }
+
+        // 蓝眼泪粒子背景
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouseX = 0;
-        let mouseY = 0;
+        let mouseX = 0, mouseY = 0;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -856,10 +1320,7 @@
         }
 
         class Particle {
-            constructor() {
-                this.reset();
-            }
-
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
@@ -869,28 +1330,19 @@
                 this.opacity = Math.random() * 0.5 + 0.2;
                 this.color = Math.random() > 0.5 ? '#00d4ff' : '#a855f7';
             }
-
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
-                // 鼠标交互
-                const dx = mouseX - this.x;
-                const dy = mouseY - this.y;
+                const dx = mouseX - this.x, dy = mouseY - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                
                 if (distance < 100) {
                     const force = (100 - distance) / 100;
                     this.x -= dx * force * 0.02;
                     this.y -= dy * force * 0.02;
                     this.opacity = Math.min(1, this.opacity + 0.05);
                 }
-
-                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                    this.reset();
-                }
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
             }
-
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -898,8 +1350,6 @@
                 ctx.globalAlpha = this.opacity;
                 ctx.fill();
                 ctx.globalAlpha = 1;
-
-                // 发光效果
                 ctx.shadowBlur = 15;
                 ctx.shadowColor = this.color;
             }
@@ -908,27 +1358,17 @@
         function initParticles() {
             particles = [];
             const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 15000));
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
         }
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.shadowBlur = 0;
-
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-
-            // 连接线
+            particles.forEach(p => { p.update(); p.draw(); });
             particles.forEach((p1, i) => {
                 particles.slice(i + 1).forEach(p2 => {
-                    const dx = p1.x - p2.x;
-                    const dy = p1.y - p2.y;
+                    const dx = p1.x - p2.x, dy = p1.y - p2.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-
                     if (distance < 100) {
                         ctx.beginPath();
                         ctx.moveTo(p1.x, p1.y);
@@ -939,36 +1379,23 @@
                     }
                 });
             });
-
             requestAnimationFrame(animateParticles);
         }
 
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            initParticles();
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
+        window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+        window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
         resizeCanvas();
         initParticles();
         animateParticles();
 
-        // ==================== 页面导航 ====================
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
 
-        // ==================== 体验预订标签切换 ====================
         function switchExperienceTab(tab) {
-            // 更新按钮状态
-            ['riding', 'study', 'cafe'].forEach(t => {
+            ['ai-photo', 'riding', 'cafe'].forEach(t => {
                 const btn = document.getElementById(`tab-${t}`);
                 const content = document.getElementById(`content-${t}`);
-                
                 if (t === tab) {
                     btn.classList.add('tab-active');
                     btn.classList.remove('glass');
@@ -981,43 +1408,12 @@
             });
         }
 
-        // ==================== 文创商城筛选 ====================
-        function filterProducts(category) {
-            // 更新标签状态
-            document.querySelectorAll('.shop-tab').forEach(tab => {
-                if (tab.dataset.category === category) {
-                    tab.classList.add('tab-active');
-                    tab.classList.remove('glass');
-                } else {
-                    tab.classList.remove('tab-active');
-                    tab.classList.add('glass');
-                }
-            });
-
-            // 筛选商品
-            document.querySelectorAll('#product-grid .product-card').forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // ==================== 购物车功能 ====================
         function addToCart(name, price) {
             const existingItem = cart.find(item => item.name === name);
-            
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ name, price, quantity: 1 });
-            }
-            
+            if (existingItem) existingItem.quantity++;
+            else cart.push({ name, price, quantity: 1 });
             updateCartUI();
-            
-            // 显示提示
-            showToast(`已添加 ${name} 到购物车`);
+            showToast(currentLang === 'english' ? `Added to cart` : `已添加到购物车`);
         }
 
         function removeFromCart(index) {
@@ -1036,7 +1432,6 @@
             const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
             cartCount.textContent = totalItems;
-
             if (cart.length === 0) {
                 cartItems.innerHTML = '';
                 cartEmpty.classList.remove('hidden');
@@ -1045,59 +1440,46 @@
                 cartEmpty.classList.add('hidden');
                 cartFooter.classList.remove('hidden');
                 cartTotal.textContent = `¥${totalPrice}`;
-
                 cartItems.innerHTML = cart.map((item, index) => `
                     <div class="glass p-4 rounded-xl flex justify-between items-center">
                         <div>
                             <div class="font-semibold">${item.name}</div>
                             <div class="text-sm text-white/60">¥${item.price} × ${item.quantity}</div>
                         </div>
-                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-300 px-2">
-                            🗑️
-                        </button>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-300 px-2">🗑️</button>
                     </div>
                 `).join('');
             }
         }
 
         function toggleCart() {
-            const modal = document.getElementById('cart-modal');
-            modal.classList.toggle('hidden');
+            document.getElementById('cart-modal').classList.toggle('hidden');
         }
 
         function checkout() {
             if (cart.length === 0) return;
-            
             const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            showToast(`订单提交成功！总金额：¥${total}`);
+            showToast(currentLang === 'english' ? `Order submitted! Total: ¥${total}` : `订单提交成功！总金额：¥${total}`);
             cart = [];
             updateCartUI();
             toggleCart();
         }
 
-        // ==================== AI白龙马智能体 ====================
         function toggleAI() {
-            const panel = document.getElementById('ai-panel');
+            document.getElementById('ai-panel').classList.toggle('active');
             aiOpen = !aiOpen;
-            panel.classList.toggle('active', aiOpen);
         }
 
         function handleAIInput(event) {
-            if (event.key === 'Enter') {
-                sendAIMessage();
-            }
+            if (event.key === 'Enter') sendAIMessage();
         }
 
         function sendAIMessage() {
             const input = document.getElementById('ai-input-field');
             const message = input.value.trim();
-            
             if (!message) return;
-
             addMessage(message, 'user');
             input.value = '';
-
-            // AI回复
             setTimeout(() => {
                 const response = generateAIResponse(message);
                 addMessage(response, 'ai');
@@ -1113,93 +1495,52 @@
         }
 
         function addMessage(text, type) {
-            const messagesContainer = document.getElementById('ai-messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type} message-in`;
-            messageDiv.textContent = type === 'ai' ? `🐴 ${text}` : text;
-            messagesContainer.appendChild(messageDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            const container = document.getElementById('ai-messages');
+            const div = document.createElement('div');
+            div.className = `message ${type} message-in`;
+            div.textContent = type === 'ai' ? `🐴 ${text}` : text;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
         }
 
         function generateAIResponse(input) {
-            const lowerInput = input.toLowerCase();
-            
-            if (lowerInput.includes('蓝眼泪') && lowerInput.includes('野骑')) {
-                return '小主好眼光！长乐蓝眼泪最佳观赏期是4-8月，臣推荐「海上明月共潮生」路线，戌时出海，子夜观泪，骑马穿越荧光海，实乃人生一大雅事！现可预订，¥688一位，含装备和摄影跟拍~';
+            const isEnglish = currentLang === 'english';
+            const lower = input.toLowerCase();
+            if (lower.includes('9.9') || lower.includes('体验') || lower.includes('trial')) {
+                return isEnglish ? 'The ¥9.9 AI Face Swap is our hottest deal! Upload your photo and become a Tang knight in the blue tears sea!' : '小主好眼光！¥9.9唐毬蓝泪AI换脸是咱家明星产品，上传照片变身唐风骑士穿越荧光海！';
             }
-            
-            if (lowerInput.includes('文创') || lowerInput.includes('商品') || lowerInput.includes('推荐')) {
-                return '回小主，咱家文创有三大系列：🏺「唐潮三事」系列有唐马球瓷盘、蓝眼泪丝巾；💎「数字藏品」有白龙马NFT；🤝「非遗联名」有德化瓷、春池玻璃。不知小主偏好哪类？';
+            if (lower.includes('蓝眼泪') || lower.includes('blue')) {
+                return isEnglish ? 'Blue Tears riding is magical! Best April-August. "Moon & Tide" package at ¥688 includes gear and photography.' : '蓝眼泪野骑是人生必体验！最佳4-8月，「海上明月共潮生」¥688含装备摄影~';
             }
-            
-            if (lowerInput.includes('旅拍') || lowerInput.includes('写真') || lowerInput.includes('ai') || lowerInput.includes('照片')) {
-                return '小主想体验AI唐风旅拍？只需上传照片，臣便可为小主生成骑白马、穿唐装、执马球的古风写真！还可选择海边蓝眼泪背景，效果如梦似幻～要现在试试吗？';
+            if (lower.includes('三事') || lower.includes('treasure') || lower.includes('文创')) {
+                return isEnglish ? 'Our Three Treasures: 1) Tang Polo - equestrian items, 2) Tianwen Sports - wellness series, 3) Blue Realm - healing products.' : '「唐潮三事」：🏇唐毬驰骋、🌿天问运动、🫙蓝域音疗，小主想了解哪个？';
             }
-            
-            if (lowerInput.includes('唐马球') || lowerInput.includes('历史') || lowerInput.includes('文化')) {
-                return '唐马球始于汉代，盛于唐代。唐玄宗李隆基便是马球高手，曾在宫中设「打球场」。当时马球是贵族运动，骑在马上用球杖击球入门。今臣随小主穿越千年，重现这盛世风华！';
-            }
-            
-            if (lowerInput.includes('咖啡') || lowerInput.includes('船型')) {
-                return '咱家的船型咖啡吧可是网红打卡点！面朝大海，360°海景，品味「海韵骑迹」特调咖啡。左手咖啡，右手策马，子夜还可观蓝眼泪～现预约¥88一位，含特调咖啡一杯！';
-            }
-            
-            if (lowerInput.includes('价格') || lowerInput.includes('多少钱') || lowerInput.includes('费用')) {
-                return '小主问价，臣如实禀报：蓝眼泪野骑¥688起，马球体验课¥398，船型咖啡吧¥88，文创商品¥68-458不等，VIP私人定制¥1888全天。不知小主预算几何？臣可为小主推荐最合适的～';
-            }
-            
-            if (lowerInput.includes('你好') || lowerInput.includes('您好') || lowerInput.includes('在吗')) {
-                return '小主安好～白龙马随时为您效劳！臣可为您推荐线路、介绍文创、讲解历史、甚至陪您聊天解闷。今日有何吩咐？';
-            }
-            
-            return '小主所言，臣已记下了～此事臣需思量一番。不如小主换个问法，或问问臣关于蓝眼泪野骑、唐马球文化、文创商品这些事？臣定当知无不言！';
+            return isEnglish ? 'Hello! I am White Dragon Horse, your AI guide. Ask about blue tears rides, Tang culture, or the ¥9.9 trial!' : '小主安好～我是白龙马，想了解蓝眼泪野骑、唐马球文化，还是¥9.9体验？';
         }
 
-        // ==================== 功能弹窗 ====================
-        function openAIGC() {
-            showToast('AI旅拍功能开发中，敬请期待！');
-        }
+        function openAIGC() { switchExperienceTab('ai-photo'); scrollToSection('experience'); }
+        function openCloudHorse() { showToast(currentLang === 'english' ? 'Coming soon!' : '敬请期待！'); }
+        function openTangPoloAR() { showToast('AR ' + (currentLang === 'english' ? 'coming soon!' : '功能开发中！')); }
+        function openBlueTearsAR() { showToast('AR ' + (currentLang === 'english' ? 'coming soon!' : '功能开发中！')); }
 
-        function openCloudHorse() {
-            showToast('云端养马功能开发中，敬请期待！');
-        }
-
-        function openTangPoloAR() {
-            showToast('AR唐马球赛功能开发中，敬请期待！');
-        }
-
-        function openBlueTearsAR() {
-            showToast('AR蓝眼泪预览功能开发中，敬请期待！');
-        }
-
-        // ==================== 提示消息 ====================
         function showToast(message) {
             const toast = document.createElement('div');
             toast.className = 'fixed top-24 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-3 rounded-full shadow-lg z-[300] message-in';
             toast.textContent = message;
             document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.remove();
-            }, 3000);
+            setTimeout(() => toast.remove(), 3000);
         }
 
-        // ==================== 平滑滚动 ====================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // ==================== 页面加载完成 ====================
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('🐴 云鞠御驾平台已加载完成');
-            console.log('白龙马：小主，臣已在此等候多时了～');
-        });
+        console.log('🐴 云鞠御驾 Yunju Yujia Platform Loaded');
     </script>
 </body>
-</html>
+</html> 
+v2.0: 双语+唐潮三事+9.9元体验
